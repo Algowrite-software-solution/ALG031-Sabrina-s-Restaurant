@@ -12,13 +12,11 @@ export default function Welcome() {
         <PageLayout>
             <Head title="Welcome to Sabrina's" />
             
-            <main>
                 <HeroSection />
                 <OurStory />
                 <MenuSection />
                 <ReservationsSection />
                 <ContactUsSection />
-            </main>
         </PageLayout>
     );
 }

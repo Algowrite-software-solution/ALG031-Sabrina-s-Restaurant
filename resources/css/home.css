@@ -1,80 +1,102 @@
 @layer base {
-  :root {
-    /* Theme Colors */
-    --background: #F5F5DC; /* Cream */
-    --foreground: #8B0000; /* Deep Red */
+    :root {
+        /* Theme Colors */
+        --background: #f5f5dc; /* Cream */
+        --foreground: #8b0000; /* Deep Red */
 
-    --card: #FFFFFF; /* Pure White */
-    --card-foreground: #8B0000; /* Deep Red */
+        --card: #ffffff; /* Pure White */
+        --card-foreground: #8b0000; /* Deep Red */
 
-    --popover: #FFFFFF; /* Pure White */
-    --popover-foreground: #8B0000; /* Deep Red */
+        --popover: #ffffff; /* Pure White */
+        --popover-foreground: #8b0000; /* Deep Red */
 
-    --primary: #8B0000; /* Deep Red */
-    --primary-foreground: #FFFFFF; /* Pure White */
+        --primary: #8b0000; /* Deep Red */
+        --primary-foreground: #ffffff; /* Pure White */
 
-    --secondary: #F5F5DC; /* Cream */
-    --secondary-foreground: #8B0000; /* Deep Red */
+        --secondary: #f5f5dc; /* Cream */
+        --secondary-foreground: #8b0000; /* Deep Red */
 
-    --muted: #e0e0c8; /* A slightly darker cream */
-    --muted-foreground: #a05252; /* A softer red */
+        --muted: #e0e0c8; /* A slightly darker cream */
+        --muted-foreground: #a05252; /* A softer red */
 
-    --accent: #8B0000; /* Deep Red */
-    --accent-foreground: #FFFFFF; /* Pure White */
+        --accent: #8b0000; /* Deep Red */
+        --accent-foreground: #ffffff; /* Pure White */
 
-    --destructive: #b54949; /* A slightly lighter red */
-    --destructive-foreground: #FFFFFF; /* Pure White */
+        --destructive: #b54949; /* A slightly lighter red */
+        --destructive-foreground: #ffffff; /* Pure White */
 
-    --border: #dcdcca; /* A border color derived from cream */
-    --input: #dcdcca;
-    --ring: #8B0000; /* Deep Red */
+        --border: #dcdcca; /* A border color derived from cream */
+        --input: #dcdcca;
+        --ring: #8b0000; /* Deep Red */
 
-    /* Default font */
-    --font-sans: 'Outfit', sans-serif;
+        /* Default font */
+        --font-sans: 'Outfit', sans-serif;
 
-    /* Radius for rounded corners */
-    --radius: 0.5rem;
-  }
-  
-  * {
-    border-color: var(--border);
-  }
+        /* Radius for rounded corners */
+        --radius: 0.5rem;
+    }
 
-  body {
-    background-color: var(--background);
-    color: var(--foreground);
-  }
+    * {
+        border-color: var(--border);
+    }
+
+    body {
+        background-color: var(--background);
+        color: var(--foreground);
+    }
 }
 
 /* Custom scrollbar styles to match the theme */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+    width: 8px;
+    height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--background);
+    background: var(--background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c06969;
-  border-radius: 4px;
+    background: #c06969;
+    border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--destructive);
+    background: var(--destructive);
 }
 
 @layer utilities {
-    .bg-deep-red { background-color: #8B0000; }
-    .text-deep-red { color: #8B0000; }
-    .border-deep-red { border-color: #8B0000; }
+    .bg-deep-red {
+        background-color: #8b0000;
+    }
+    .text-deep-red {
+        color: #8b0000;
+    }
+    .border-deep-red {
+        border-color: #8b0000;
+    }
 
-    .bg-cream { background-color: #F5F5DC; }
-    .text-cream { color: #F5F5DC; }
-    .border-cream { border-color: #F5F5DC; }
+    .bg-cream {
+        background-color: #f5f5dc;
+    }
+    .text-cream {
+        color: #f5f5dc;
+    }
+    .border-cream {
+        border-color: #f5f5dc;
+    }
 
-    .bg-pure-white { background-color: #FFFFFF; }
-    .text-pure-white { color: #FFFFFF; }
-    .border-pure-white { border-color: #FFFFFF; }
+    .bg-pure-white {
+        background-color: #ffffff;
+    }
+    .text-pure-white {
+        color: #ffffff;
+    }
+    .border-pure-white {
+        border-color: #ffffff;
+    }
+}
+
+.soft-shadow {
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 50px;
 }

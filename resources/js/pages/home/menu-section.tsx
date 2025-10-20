@@ -35,9 +35,9 @@ export default function MenuSection() {
     const [activeIndex, setActiveIndex] = useState(0);
 
     return (
-        <section className="bg-cream py-16 md:py-24">
+        <section className="bg-cream py-8 md:pt-22">
             <div className="flex flex-col items-center">
-                <h2 className="font-outfit mb-12 text-2xl leading-none font-light tracking-normal text-black">MENU</h2>
+                <h2 className="font-outfit text-2xl leading-none font-light tracking-normal text-black">MENU</h2>
 
                 <Swiper
                     effect={'coverflow'}
@@ -49,7 +49,7 @@ export default function MenuSection() {
                     onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
                     coverflowEffect={{
                         rotate: 0,
-                        stretch: 0,
+                        stretch: -100,
                         depth: 100,
                         modifier: 1.5,
                         slideShadows: false,
@@ -58,7 +58,7 @@ export default function MenuSection() {
                     className="w-full"
                 >
                     {menuItems.map((item, index) => (
-                        <SwiperSlide key={index} className="!w-[80%] md:!w-[50%] lg:!w-[40%]">
+                        <SwiperSlide key={index} className="!w-[80%] md:!w-[50%] lg:!w-[40%] py-20">
                             <MenuCard imageUrl={item.imageUrl} title={item.title} description={item.description} isActive={index === activeIndex} />
                         </SwiperSlide>
                     ))}

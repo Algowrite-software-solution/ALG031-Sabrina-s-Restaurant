@@ -3,7 +3,7 @@ import { FormField } from '../../components/custom/form-field'; // Import our ne
 
 export default function ReservationsSection() {
   return (
-    <section className="bg-cream text-black py-16 md:py-24 px-4 md:px-8">
+    <section className="bg-cream text-black py-16 md:pb-24 px-4 md:px-8">
       <div className="container mx-auto">
         
         <h2 className="font-cormorant font-normal leading-none tracking-normal 

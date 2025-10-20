@@ -11,14 +11,14 @@ require __DIR__ . '/core.php';
 // ==========================================
 
 
+// landing route
+Route::get('/', function () {
+    return redirect()->route('welcome');
+});
 
-// Update From Here 👇
-
-// landing route (update as you need)
-// Route::get('/', function () {
-//     return redirect()->route('welcome');
-// });
-
+Route::get('/welcome', function () {
+    return Inertia::render('welcome');
+})->name('welcome');
 
 
 //test route

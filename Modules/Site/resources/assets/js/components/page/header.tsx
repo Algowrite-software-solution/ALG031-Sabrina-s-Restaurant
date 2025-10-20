@@ -1,101 +1,57 @@
-import AppLogo from '@/components/app-logo';
-import AppearanceToggleTab from '@/components/appearance-tabs';
-import { cn } from '@/lib/utils';
-import { useIsMobile } from '@core/hooks/use-mobile';
-import { Link } from '@inertiajs/react';
-import { Menu } from 'lucide-react';
-import React, { PropsWithChildren, createContext, useState } from 'react';
-import PageSidebar from './sidebar';
-type PageHeaderContextType = {
-    isOpen: boolean;
-    items?: HeaderItemProps[];
-    setIsOpen: (isOpen: boolean) => void;
-};
+// resources/js/Components/Header.tsx
 
-export const PageHeaderContext = createContext<PageHeaderContextType>({ isOpen: false, setIsOpen: () => {} });
+import React, { useState } from 'react';
 
-const items: HeaderItemProps[] = [
-    {
-        name: 'Home',
-        href: '/home',
-    },
-    {
-        name: 'Shop',
-        href: '/shop',
-    },
-    {
-        name: 'About',
-        href: '/about',
-    },
-    {
-        name: 'Contact',
-        href: '/contact',
-    },
-];
-
-// Header component
-export function Header() {
-    const [isOpen, setIsOpen] = useState(false);
-    const isMobile = useIsMobile();
-
-    return (
-        <PageHeaderContext.Provider value={{ isOpen, items, setIsOpen }}>
-            <header className="bg-secondary flex w-full flex-col">
-                <PageSidebar />
-                <div className="container mx-auto flex w-full items-center justify-between px-5 py-3">
-                    <div className="flex items-center gap-1">
-                        {isMobile && <button onClick={() => setIsOpen(!isOpen)}>{!isOpen && <Menu className="cursor-pointer" />}</button>}
-                        <Header.Logo />
-                    </div>
-                    <div className="flex items-center gap-1">
-                        {!isMobile && <Header.Nav>{items?.map((item) => <Header.Item key={item.name} {...item} />)}</Header.Nav>}
-                        <AppearanceToggleTab
-                            removeSystem={true}
-                            hasText={false}
-                            className="text-secondary dark:text-secondary bg-transparent dark:bg-transparent"
-                        />
-                    </div>
-                </div>
-            </header>
-        </PageHeaderContext.Provider>
-    );
+interface HeaderProps {
+  logoUrl: string;
 }
 
-// Item interface
-export interface HeaderItemProps {
-    name: string;
-    icon?: React.ReactNode;
-    href: string;
-    className?: string;
+export default function Header({ logoUrl }: HeaderProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  return (
+    <header className="absolute top-0 left-0 w-full z-30 text-pure-white">
+      <div className="container mx-auto flex justify-between items-center p-6 border-b border-pure-white/50">
+        
+        <nav className="hidden md:flex items-center gap-8">
+          <a href="#story" className="font-outfit text-2xl font-light hover:opacity-80 transition-opacity">About</a>
+          <a href="#menu" className="font-outfit text-2xl font-light hover:opacity-80 transition-opacity">Menu</a>
+        </nav>
+
+        <div className="md:hidden">
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Open menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <div className="md:absolute md:left-1/2 md:-translate-x-1/2">
+          <a href="#home">
+            <img src={'storage/images/brand/logo-deep-red.png'} alt="Sabrina's Logo" className="h-12 w-auto" />
+          </a>
+        </div>
+        
+        <div className="hidden md:block">
+          <a href="#reservations" className="font-outfit text-2xl font-light border border-pure-white px-6 py-2 hover:bg-pure-white hover:text-deep-red transition-colors">
+            Reserve a Table
+          </a>
+        </div>
+      </div>
+
+      {isMenuOpen && (
+        <div className="absolute top-full left-0 w-full bg-black bg-opacity-90 md:hidden">
+          <nav className="flex flex-col items-center gap-6 p-8">
+            <a href="#story" onClick={() => setIsMenuOpen(false)} className="font-outfit text-2xl font-light">About</a>
+            <a href="#menu" onClick={() => setIsMenuOpen(false)} className="font-outfit text-2xl font-light">Menu</a>
+            <a href="#reservations" onClick={() => setIsMenuOpen(false)} className="font-outfit text-2xl font-light mt-4 border border-pure-white px-6 py-2">
+              Reserve a Table
+            </a>
+          </nav>
+        </div>
+      )}
+    </header>
+  );
 }
-
-// Header Item component
-Header.Item = function HeaderItem({ name, icon, href, className }: HeaderItemProps) {
-    return (
-        <Link href={href} className={cn('hover:text-accent-foreground flex items-center gap-2 hover:underline', className)}>
-            {icon}
-            {name}
-        </Link>
-    );
-};
-
-// Nav component for grouping items
-Header.Nav = function HeaderNav({
-    children,
-    orientation = 'horizontal',
-    className,
-}: PropsWithChildren<{ orientation?: 'horizontal' | 'vertical'; className?: string }>) {
-    return <nav className={cn('flex gap-4 px-2', orientation === 'horizontal' ? 'flex-row items-center' : 'flex-col', className)}>{children}</nav>;
-};
-
-// Logo component
-Header.Logo = function HeaderLogo({ classNameIcon, classNameText }: { classNameIcon?: string; classNameText?: string }) {
-    const isMobile = useIsMobile();
-    return (
-        <Link href="/">
-            <AppLogo text={!isMobile} classNameIcon={cn('text-4xl', classNameIcon)} classNameText={cn('text-xl', classNameText)} />
-        </Link>
-    );
-};
-
-export default Header;

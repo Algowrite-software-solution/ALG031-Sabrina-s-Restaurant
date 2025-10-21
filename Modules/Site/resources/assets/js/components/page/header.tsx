@@ -14,7 +14,7 @@ export default function Header({ logoUrl }: HeaderProps) {
       <div className="flex justify-between items-center p-8">
         
         <nav className="hidden md:flex items-center gap-8">
-          <a href="#story" className="font-outfit text-2xl font-light hover:opacity-80 transition-opacity">About</a>
+          <a href="#about-us" className="font-outfit text-2xl font-light hover:opacity-80 transition-opacity">About</a>
           <a href="#menu" className="font-outfit text-2xl font-light hover:opacity-80 transition-opacity">Menu</a>
         </nav>
 
@@ -44,7 +44,7 @@ export default function Header({ logoUrl }: HeaderProps) {
       {isMenuOpen && (
         <div className="absolute top-full left-0 w-full bg-black bg-opacity-90 md:hidden">
           <nav className="flex flex-col items-center gap-6 p-8">
-            <a href="#story" onClick={() => setIsMenuOpen(false)} className="font-outfit text-2xl font-light">About</a>
+            <a href="#about-us" onClick={() => setIsMenuOpen(false)} className="font-outfit text-2xl font-light">About</a>
             <a href="#menu" onClick={() => setIsMenuOpen(false)} className="font-outfit text-2xl font-light">Menu</a>
           </nav>
         </div>

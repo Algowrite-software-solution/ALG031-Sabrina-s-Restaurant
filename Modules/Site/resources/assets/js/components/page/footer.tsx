@@ -43,9 +43,9 @@ export default function Footer() {
               Links
             </h3>
             <nav className="flex flex-col gap-2 items-center md:items-start">
-              <a href="#reservations" className="font-outfit font-light text-xl leading-none hover:underline">Reservations</a>
-              <a href="#contact" className="font-outfit font-light text-xl leading-none hover:underline">Contact Us</a>
-              <a href="#home" className="font-outfit font-light text-xl leading-none hover:underline">Home</a>
+              <a href="#reservations" className="font-outfit font-light text-xl leading-none text-deep-red-hover hover:underline">Reservations</a>
+              <a href="#contact-us" className="font-outfit font-light text-xl leading-none text-deep-red-hover hover:underline">Contact Us</a>
+              <a href="#home" className="font-outfit font-light text-xl leading-none text-deep-red-hover hover:underline">Home</a>
             </nav>
           </div>
 
@@ -54,10 +54,10 @@ export default function Footer() {
               Follow Us
             </h3>
             <div className="flex gap-4">
-              <a href="#" aria-label="Instagram" className="hover:opacity-75">
+              <a href="#" aria-label="Instagram" className="text-deep-red-hover">
                 <InstagramIcon />
               </a>
-              <a href="#" aria-label="Facebook" className="hover:opacity-75">
+              <a href="#" aria-label="Facebook" className="text-deep-red-hover">
                 <FacebookIcon />
               </a>
             </div>

@@ -5,7 +5,7 @@ import { FormTextarea } from '../../components/custom/form-textarea';
 export default function ContactUsSection() {
 
   return (
-    <section className="bg-cream text-black">
+    <section id='contact-us' className="bg-cream text-black">
       <div className="w-full p-10">
         <div 
           className="w-full h-64 bg-cover bg-center"

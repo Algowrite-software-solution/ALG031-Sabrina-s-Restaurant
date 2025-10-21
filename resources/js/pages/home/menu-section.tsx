@@ -35,7 +35,7 @@ export default function MenuSection() {
     const [activeIndex, setActiveIndex] = useState(0);
 
     return (
-        <section className="bg-cream py-8 md:pt-22">
+        <section id='menu' className="bg-cream py-8 md:pt-22">
             <div className="flex flex-col items-center">
                 <h2 className="font-outfit text-2xl leading-none font-light tracking-normal text-black">MENU</h2>
 

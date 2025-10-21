@@ -4,7 +4,7 @@ import Button from '@/components/custom/button';
 export default function HeroSection() {
 
   return (
-    <div
+    <div id='home'
       className="relative flex h-screen w-full items-center justify-center bg-cover bg-center text-center"
       style={{ backgroundImage: `url("storage/images/home/hero-background.png")` }}
     >
@@ -21,21 +21,21 @@ export default function HeroSection() {
         </p>
         
         <div className='mt-4 flex gap-4 flex-col'>
-        <button 
-          className="font-cormorant md:hidden block border-2 border-deep-red bg-transparent px-2 py-3 text-[24px]
-                     font-light uppercase leading-none tracking-[.05em] transition-colors 
-                     hover:bg-deep-red hover:bg-opacity-75 md:text-[40px]"
+        <a href='#reservations'
+          className="font-cormorant md:hidden block border-1 border-deep-red bg-transparent px-2 py-3 text-[24px]
+                     font-light leading-none tracking-[.05em] transition-colors 
+                     bg-deep-red-hover hover:bg-opacity-75 md:text-[40px]"
         >
           Reserve a Table
-        </button>
+        </a>
         
-        <button 
-          className="font-cormorant border-2 border-deep-red bg-transparent px-2 py-3 text-[24px]
-                     font-light uppercase leading-none tracking-[.05em] transition-colors 
-                     hover:bg-deep-red hover:bg-opacity-75 md:text-[40px]"
+        <a href='#menu'
+          className="font-cormorant border-1 border-deep-red bg-transparent px-2 py-3 text-[24px]
+                     font-light leading-none tracking-[.05em] transition-colors 
+                     bg-deep-red-hover hover:bg-opacity-75 md:text-[40px]"
         >
           View Menu
-        </button>
+        </a>
         </div>
         
         <p className="font-outfit mt-4 max-w-7xl opacity-65 text-[14px] font-thin leading-snug md:text-[17px]">

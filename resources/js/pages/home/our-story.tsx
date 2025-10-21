@@ -3,7 +3,7 @@ import React from 'react';
 export default function OurStory() {
 
   return (
-    <section className="bg-deep-red h-full md:h-screen flex justify-center items-center">
+    <section id='about-us' className="bg-deep-red h-full md:h-screen flex justify-center items-center">
       <div className="container mx-auto flex flex-col md:flex-row">
 
         <div className="relative w-full md:w-1/2 pr-4 md:pr-10 lg:pr-15 p-4">
@@ -60,7 +60,7 @@ export default function OurStory() {
             <div className="w-full md:w-1/2 flex justify-center md:justify-start mt-8 md:mt-0">
               <button className="font-outfit text-pure-white border-1 border-pure-white bg-transparent
                                  p-2 md:p-3 text-[22px] md:text-[18px] lg:text-[22px] font-light leading-none tracking-[.05em]
-                                 transition-colors hover:bg-pure-white hover:text-deep-red">
+                                 transition-colors hover:bg-white text-deep-red-hover">
                 Contact Us
               </button>
             </div>

@@ -6,7 +6,7 @@ import type { PropsWithChildren } from 'react';
 export default function PageHeaderLayout({ children }: PropsWithChildren) {
     return (
         <>
-            <PageHeader />
+            <PageHeader logoUrl='' />
             {children}
             <PageFooter />
         </>

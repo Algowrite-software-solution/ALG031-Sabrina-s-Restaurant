@@ -1,0 +1,1 @@
+const e={appName:"Arkenstone",appDescription:"Mae govannen na i ven e-Commerce.",appCompany:"Algowrite (Pvt) Ltd",appAuthorUrl:"https://github.com/janithnirmal",appVersion:"0.3.1",lastUpdated:new Date().toISOString().split("T")[0],apiVersion:"v1",seller:{businessName:"Example (Pvt) Ltd"},contact:{phone:"+123 456 7890",email:"info@example.com"}};export{e as C};

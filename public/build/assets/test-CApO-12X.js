@@ -1,0 +1,1 @@
+import{j as t}from"./app-BxBXNE8X.js";import r from"./test-cT25mW-5.js";import"./api-c0Kn-lJ5.js";import"./index-DdySkWD2.js";import"./index-YCOa-sfe.js";import"./config-DdtzMSVa.js";import"./react-jtgObajH.js";function n(){return t.jsx(r,{})}export{n as default};

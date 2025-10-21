@@ -102,6 +102,44 @@
     .border-pure-white {
         border-color: #ffffff;
     }
+
+    .fade-in-up-initial {
+    opacity: 0;
+    transform: translateY(80px);
+    }
+
+    .fade-in-up-short-initial {
+    opacity: 0;
+    transform: translateY(30px);
+    }
+
+    .fade-in-up-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in-left-initial {
+    opacity: 0;
+    transform: translateX(-80px);
+    }
+
+    .fade-in-left-visible {
+    opacity: 1;
+    transform: translateX(0); 
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in-right-initial {
+    opacity: 0;
+    transform: translateX(80px);
+    }
+
+    .fade-in-right-visible {
+    opacity: 1;
+    transform: translateX(0); 
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
 }
 
 .soft-shadow {

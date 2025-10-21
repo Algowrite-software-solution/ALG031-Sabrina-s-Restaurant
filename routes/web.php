@@ -12,11 +12,11 @@ require __DIR__ . '/core.php';
 
 
 // landing route
-Route::get('/', function () {
-    return redirect()->route('welcome');
-});
+// Route::get('/', function () {
+//     return redirect()->route('welcome');
+// });
 
-Route::get('/welcome', function () {
+Route::get('/', function () {
     return Inertia::render('welcome');
 })->name('welcome');
 

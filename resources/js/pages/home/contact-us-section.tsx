@@ -6,50 +6,62 @@ export default function ContactUsSection() {
 
   return (
     <section className="bg-cream text-black">
-      <div 
-        className="w-full h-64 md:h-96 bg-cover bg-center"
-        style={{ backgroundImage: `url('storage/images/home/contact-us-image.jpg')` }}
-      ></div>
+      <div className="w-full p-10">
+        <div 
+          className="w-full h-64 bg-cover bg-center"
+          style={{ backgroundImage: `url('storage/images/home/contact-us-image.jpg')` }}
+        ></div>
+      </div>
 
-      <div className="container mx-auto py-16 md:py-24 px-4 md:px-8">
+      <div className="w-full py-8 md:py-16 px-4 md:px-10">
         
-        <div className="flex flex-col md:flex-row md:items-center gap-8 mb-16">
-          <div className="w-full md:w-1/2 order-2 md:order-1">
+        <div className="flex flex-col md:flex-row md:items-start gap-8 mb-8">
+          <div className="w-full md:w-2/3">
+            <h2 className="font-cormorant font-normal leading-none text-left 
+                           text-[96px] md:text-[128px]">
+              Contact Us
+            </h2>
+          </div>
+          <div className="w-full md:w-1/3">
             <p className="font-outfit font-thin text-base md:text-2xl leading-snug text-center md:text-left">
               Have questions or special requests? We’re here to help. Reach out to Sabrina’s and let us 
               make your visit seamless and memorable.
             </p>
           </div>
-          <div className="w-full md:w-1/2 order-1 md:order-2">
-            <h2 className="font-cormorant font-normal leading-none text-center md:text-right 
-                           text-[96px] md:text-[128px]">
-              Contact Us
-            </h2>
-          </div>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start mb-16">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start mb-0 md:mb-8">
           <form className="w-full md:w-2/3 flex flex-col gap-6">
             <FormField label="Name" id="contact-name" type="text" placeholder="Ex: Samuel Iglesias" />
             <FormField label="Email" id="contact-email" type="email" placeholder="email@example.com" />
-            <FormTextarea label="Your message" id="contact-message" placeholder="How can we help you...?" />
+            <FormField label="Your message" id="contact-message" placeholder="How can we help you...?" />
           </form>
 
-          <div className="w-full md:w-1/3 flex justify-center md:justify-start pt-8">
-            <button className="flex items-center gap-4 bg-transparent border-2 border-black text-black
-                               font-outfit font-normal text-2xl md:text-3xl px-8 py-3
+          <div className="w-full max-h-full md:w-1/3 flex justify-center items-end md:justify-start pt-0 md:pt-8">
+            <button className="flex items-center gap-4 bg-transparent border-1 border-black text-black
+                               font-outfit font-normal text-2xl md:text-3xl px-5 py-3
                                transition-colors hover:bg-black hover:text-white">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
               Send
+              <svg xmlns="http://www.w3.org/2000/svg"
+                  width="24" height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
             </button>
           </div>
         </div>
+      </div>
 
-        <div className="text-center mb-16">
-          <p className="font-outfit font-normal text-sm md:text-2xl leading-relaxed">
-            +00 1 212 555 1234   |    Sabrina’s Spanish Cuisine, 123 Calle del Sol, Worcester, MA
-          </p>
-        </div>
+      <div className="text-center mb-4">
+        <p className="font-outfit text-gray-500 font-light text-sm md:text-2xl leading-relaxed">
+          +00 1 212 555 1234   |    Sabrina’s Spanish Cuisine, 123 Calle del Sol, Worcester, MA
+        </p>
       </div>
       
       <div>

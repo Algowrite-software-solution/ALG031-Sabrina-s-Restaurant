@@ -10,8 +10,8 @@ export default function Header({ logoUrl }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="absolute top-0 left-0 w-full z-30 text-pure-white">
-      <div className="container mx-auto flex justify-between items-center p-6 border-b border-pure-white/50">
+    <header className="absolute top-0 left-0 w-full z-30 border-b border-white/20 text-pure-white">
+      <div className="flex justify-between items-center p-8">
         
         <nav className="hidden md:flex items-center gap-8">
           <a href="#story" className="font-outfit text-2xl font-light hover:opacity-80 transition-opacity">About</a>
@@ -30,12 +30,12 @@ export default function Header({ logoUrl }: HeaderProps) {
 
         <div className="md:absolute md:left-1/2 md:-translate-x-1/2">
           <a href="#home">
-            <img src={'storage/images/brand/logo-deep-red.png'} alt="Sabrina's Logo" className="h-12 w-auto" />
+            <img src={'storage/images/brand/logo-deep-red.png'} alt="Sabrina's Logo" className="h-18 md:h-10 lg:h-18 w-auto" />
           </a>
         </div>
         
         <div className="hidden md:block">
-          <a href="#reservations" className="font-outfit text-2xl font-light border border-pure-white px-6 py-2 hover:bg-pure-white hover:text-deep-red transition-colors">
+          <a href="#reservations" className="font-outfit text-2xl font-light border-s border-white/20 px-6 py-6 hover:bg-pure-white hover:text-deep-red transition-colors">
             Reserve a Table
           </a>
         </div>
@@ -46,9 +46,6 @@ export default function Header({ logoUrl }: HeaderProps) {
           <nav className="flex flex-col items-center gap-6 p-8">
             <a href="#story" onClick={() => setIsMenuOpen(false)} className="font-outfit text-2xl font-light">About</a>
             <a href="#menu" onClick={() => setIsMenuOpen(false)} className="font-outfit text-2xl font-light">Menu</a>
-            <a href="#reservations" onClick={() => setIsMenuOpen(false)} className="font-outfit text-2xl font-light mt-4 border border-pure-white px-6 py-2">
-              Reserve a Table
-            </a>
           </nav>
         </div>
       )}

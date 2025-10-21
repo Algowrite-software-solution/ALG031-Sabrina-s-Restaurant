@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { EffectCoverflow, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useInView } from 'react-intersection-observer';
 
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
@@ -31,13 +32,30 @@ const menuItems = [
     },
 ];
 
+ 
+
 export default function MenuSection() {
     const [activeIndex, setActiveIndex] = useState(0);
 
+    const { ref: h2Ref, inView: h2InView } = useInView({triggerOnce: true, threshold: 0.1, delay: 200,});
+    const { ref: divRef, inView: divInView } = useInView({triggerOnce: true, threshold: 0.1, delay: 300,});
+ 
     return (
         <section id='menu' className="bg-cream py-8 md:pt-22">
-            <div className="flex flex-col items-center">
-                <h2 className="font-outfit text-2xl leading-none font-light tracking-normal text-black">MENU</h2>
+            <div 
+                ref={divRef}
+                className={`
+                    flex flex-col items-center
+                    ${divInView ? 'fade-in-up-visible' : 'fade-in-up-initial'}
+                `}
+            >
+                <h2 
+                ref={h2Ref}
+                className={`
+                    font-outfit text-2xl leading-none font-light tracking-normal text-black
+                    ${h2InView ? 'fade-in-up-visible' : 'fade-in-up-initial'}
+                `}
+                >MENU</h2>
 
                 <Swiper
                     effect={'coverflow'}

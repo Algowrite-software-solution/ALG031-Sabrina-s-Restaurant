@@ -11,24 +11,34 @@ import MenuCard from '../../components/custom/menu-card';
 
 const menuItems = [
     {
-        imageUrl: 'storage/images/home/menu-image-1.png',
-        title: 'Gazpacho',
-        description: 'A refreshing cold soup made of raw, blended vegetables.',
+        imageUrl: 'storage/images/home/menu-image-1.webp',
+        title: 'Patatas Bravas',
+        description: 'Crispy golden potatoes with a smoky paprika aioli and spicy tomato sauce.',
     },
     {
-        imageUrl: 'storage/images/home/menu-image-2.png',
-        title: 'Croquetas delemundo capita velvarde',
-        description: 'A classic Spanish rice dish with saffron, seafood, and chorizo.',
+        imageUrl: 'storage/images/home/menu-image-2.webp',
+        title: 'Gambas al Ajillo',
+        description: 'Sizzling garlic shrimp infused with olive oil, chili, and a hint of lemon zest.',
     },
     {
-        imageUrl: 'storage/images/home/menu-image-3.png',
-        title: 'Croquetas delemundo capita velvarde',
-        description: 'Crispy, creamy fritters filled with ham, cheese, or mushrooms.',
+        imageUrl: 'storage/images/home/menu-image-3.webp',
+        title: 'Jamón Ibérico',
+        description: 'Aged Iberian ham hand-sliced to perfection — rich, nutty, and melt-in-your-mouth.',
     },
     {
-        imageUrl: 'storage/images/home/menu-image-2.png',
-        title: 'Paella',
-        description: 'A classic Spanish rice dish with saffron, seafood, and chorizo.',
+        imageUrl: 'storage/images/home/menu-image-4.webp',
+        title: 'Croquetas de Pollo',
+        description: 'Creamy chicken croquettes wrapped in a golden, delicate crust.',
+    },
+    {
+        imageUrl: 'storage/images/home/menu-image-5.webp',
+        title: 'Pulpo a la Gallega',
+        description: 'Tender octopus served with smoked paprika, sea salt, and olive oil over sliced potatoes.',
+    },
+    {
+        imageUrl: 'storage/images/home/menu-image-6.webp',
+        title: 'Churros con Chocolate',
+        description: 'Crisp, warm churros dusted with sugar and served with rich, melted Spanish chocolate.',
     },
 ];
 

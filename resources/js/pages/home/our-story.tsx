@@ -33,7 +33,7 @@ export default function OurStory() {
     <section id='about-us' className="bg-deep-red h-full md:h-screen flex justify-center items-center">
       <div className="flex flex-col md:flex-row py-20 md:py-0 px-2 lg:px-10 xl:px-20 2xl:px-40">
 
-        <div className="relative w-full md:w-1/2 pr-4 md:pr-10 lg:pr-15 p-4">
+        <div className="relative w-full md:w-1/2 pr-4 md:pr-10 lg:pr-15 p-4 py-0">
             <div 
                   ref={leftImageRef}
                   className={`
@@ -41,15 +41,6 @@ export default function OurStory() {
                     ${leftImageInView ? 'fade-in-left-visible' : 'fade-in-left-initial'}
                   `}
                 >
-                {/* <img 
-                    src={`storage/images/home/our-story.jpg`} 
-                    alt="Interior of Sabrina's restaurant" 
-                  ref={leftImageRef}
-                  className={`
-                    w-full h-full drop-shadow-2xl/55
-                    ${leftImageInView ? 'fade-in-left-visible' : 'fade-in-left-initial'}
-                  `}
-                /> */}
 
               {slideshowImages.map((imageUrl, index) => (
                 <img
@@ -89,7 +80,7 @@ export default function OurStory() {
             </div>
         </div>
 
-        <div className="w-full md:w-1/2 p-8 pt-0 md:pt-8 pl-8 md:pl-10 lg:pl-15 flex flex-col gap-5 md:gap-5 lg:gap-4 xl:gap-4 2xl:gap-14 text-black">
+        <div className="w-full md:w-1/2 p-8 py-0 pt-0 md:pt-0 pl-8 md:pl-10 lg:pl-15 flex flex-col gap-5 md:gap-5 lg:gap-0 xl:gap-4 2xl:gap-14 text-black">
           
           <h2 
                 ref={rightText2Ref}

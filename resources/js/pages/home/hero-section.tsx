@@ -45,7 +45,7 @@ export default function HeroSection() {
         <h1 
           ref={h1Ref}
           className={`
-            font-cormorant text-[48px] font-light leading-none md:text-[96px]
+            font-milyuna text-[48px] font-light leading-none md:text-[96px]
             ${h1InView ? 'fade-in-up-visible' : 'fade-in-up-initial'}
           `}
         >
@@ -66,7 +66,7 @@ export default function HeroSection() {
         <a href='#reservations' 
           ref={button1Ref}
           className={`
-            font-cormorant md:hidden block border-1 border-deep-red bg-transparent px-2 py-3 text-[24px]
+            font-milyuna md:hidden block border-1 border-deep-red bg-transparent px-2 py-3 text-[24px]
                      font-light leading-none tracking-[.05em] transition-colors 
                      bg-deep-red-hover hover:bg-opacity-75 md:text-[40px]
             ${button1InView ? 'fade-in-up-visible' : 'fade-in-up-initial'}
@@ -78,7 +78,7 @@ export default function HeroSection() {
         <a href='#menu'
           ref={button2Ref}
           className={`
-            font-cormorant border-1 border-deep-red bg-transparent px-2 py-3 text-[24px]
+            font-milyuna border-1 border-deep-red bg-transparent px-2 py-3 text-[24px]
                      font-light leading-none tracking-[.05em] transition-colors 
                      bg-deep-red-hover hover:bg-opacity-75 md:text-[40px]
             ${button2InView ? 'fade-in-up-visible' : 'fade-in-up-initial'}

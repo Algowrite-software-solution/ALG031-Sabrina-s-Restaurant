@@ -16,7 +16,7 @@ export default function Button({
 }: ButtonProps) {
   
   const baseClasses = `
-    font-cormorant leading-none tracking-[.05em] transition-colors duration-300
+    font-milyuna leading-none tracking-[.05em] transition-colors duration-300
     px-8 py-3 text-center inline-block
   `;
 

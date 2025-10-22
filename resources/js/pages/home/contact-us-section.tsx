@@ -21,7 +21,7 @@ export default function ContactUsSection() {
             w-full h-64 bg-cover bg-center
             ${image1InView ? 'fade-in-up-visible' : 'fade-in-up-initial'}
           `}
-          style={{ backgroundImage: `url('storage/images/home/contact-us-image.jpg')` }}
+          style={{ backgroundImage: `url('storage/images/home/contact-us-image.webp')` }}
         ></div>
       </div>
 

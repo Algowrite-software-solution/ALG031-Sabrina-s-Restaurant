@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 const slideshowImages = [
-  'storage/images/home/our-story-image1.jpg',
-  'storage/images/home/our-story-image2.jpg',
-  'storage/images/home/our-story-image3.jpg',
-  'storage/images/home/our-story-image4.jpg',
+  'storage/images/home/our-story-image1.webp',
+  'storage/images/home/our-story-image2.webp',
+  'storage/images/home/our-story-image3.webp',
+  'storage/images/home/our-story-image4.webp',
 ];
 
 export default function OurStory() {

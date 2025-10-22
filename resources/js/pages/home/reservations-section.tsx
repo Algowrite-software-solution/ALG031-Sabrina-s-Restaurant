@@ -16,7 +16,7 @@ export default function ReservationsSection() {
         <h2 
           ref={h2Ref}
           className={`
-            font-cormorant font-normal leading-none tracking-normal 
+            font-milyuna font-normal leading-none tracking-normal 
                        text-center md:text-left text-[64px] md:text-[112px] mb-8
             ${h2InView ? 'fade-in-up-visible' : 'fade-in-up-initial'}
           `}
@@ -84,7 +84,7 @@ export default function ReservationsSection() {
           <button 
           ref={buttonRef}
           className={`
-            font-cormorant bg-transparent border-1 border-deep-red text-deep-red
+            font-milyuna bg-transparent border-1 border-deep-red text-deep-red
                              font-normal uppercase leading-none tracking-[.05em] p-4 md:p-3
                              text-[20px] md:text-[36px] transition-colors bg-deep-red-hover hover:text-white
             ${buttonInView ? 'fade-in-up-visible' : 'fade-in-up-short-initial'}

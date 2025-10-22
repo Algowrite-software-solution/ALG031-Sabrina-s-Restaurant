@@ -20,7 +20,7 @@ export default function MenuCard({ imageUrl, title, description, isActive }: Men
                 <div className="0 absolute z-20 flex h-full w-full items-center justify-center py-[20%]">
                     <div className="h-max w-full">
                         <div className="-ml-[10%] flex min-h-full w-[120%] items-center justify-center md:-ml-[15%] md:w-[130%]">
-                            {isActive && <h1 className="font-cormorant text-center text-6xl text-black sm:text-7xl md:text-9xl">{title}</h1>}
+                            {isActive && <h1 className="font-milyuna text-center text-6xl text-black sm:text-7xl md:text-9xl">{title}</h1>}
                         </div>
                     </div>
                 </div>
@@ -28,7 +28,7 @@ export default function MenuCard({ imageUrl, title, description, isActive }: Men
                 <div className="absolute z-30 flex h-full w-full items-center justify-center py-[20%]">
                     <div className="h-max w-full overflow-hidden">
                         <div className="-ml-[10%] flex min-h-full w-[120%] items-center justify-center md:-ml-[15%] md:w-[130%]">
-                            {isActive && <h1 className="font-cormorant text-center text-6xl text-white sm:text-7xl md:text-9xl">{title}</h1>}
+                            {isActive && <h1 className="font-milyuna text-center text-6xl text-white sm:text-7xl md:text-9xl">{title}</h1>}
                         </div>
                     </div>
                 </div>

@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
             FileSeeder::class,
 
                 // Product
-            ProductDatabaseSeeder::class,
+            // ProductDatabaseSeeder::class,
 
         ]);
     }

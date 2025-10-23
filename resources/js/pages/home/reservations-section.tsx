@@ -48,7 +48,7 @@ export default function ReservationsSection() {
   }, [wasSuccessful]);
 
   return (
-    <section id='reservations' className="bg-cream h-full md:h-screen text-black py-8 md:py-4 px-4 md:px-8">
+    <section id='reservations' className="bg-cream flex justify-center items-center h-full md:h-screen text-black py-8 md:py-4 px-4 md:px-8">
       <div className="container mx-auto">
         
         <h2 

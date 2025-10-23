@@ -1,0 +1,2 @@
+import{j as t}from"./app-DwuUEUjz.js";const x=({label:l,id:e,...o})=>t.jsxs("div",{className:"flex w-full flex-col md:flex-row md:items-center",children:[t.jsx("label",{htmlFor:e,className:"font-outfit text-[14px] md:text-[18px] lg:text-[21px] font-normal text-left w-full md:w-1/4 mb-1 md:mb-0",children:l}),t.jsx("input",{id:e,...o,className:`font-outfit text-[14px] md:text-[18px] lg:text-[21px] font-light w-full md:w-3/4 bg-transparent border-b-1 
+                   border-black focus:outline-none focus:border-deep-red py-2 placeholder:text-gray-500`})]});export{x as F};

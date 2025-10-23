@@ -47,20 +47,20 @@ export default function ContactUsSection() {
   }, [wasSuccessful]);
 
   return (
-    <section id='contact-us' className="bg-cream flex-row w-full items-center justify-center text-black">
-      <div className='container mx-auto'>
-        <div className="w-full p-10">
+    <section id='contact-us' className="bg-cream w-full text-black">
+      <div className='container mx-auto min-h-screen flex flex-col justify-center'>
+        <div className="w-full py-10">
           <div 
             ref={image1Ref}
             className={`
               w-full h-64 bg-cover bg-center
               ${image1InView ? 'fade-in-up-visible' : 'fade-in-up-initial'}
             `}
-            style={{ backgroundImage: `url('storage/images/home/contact-us-image.webp')` }}
+            style={{ backgroundImage: `url('/storage/images/home/contact-us-image.webp')` }}
           ></div>
         </div>
 
-        <div className="w-full py-8 md:py-16 px-4 md:px-10">
+        <div className="w-full py-8 md:py-16 px-4 md:px-0">
           
           <div className="flex flex-col md:flex-row md:items-start gap-8 mb-8">
             <div className="w-full md:w-2/3">
@@ -188,11 +188,11 @@ export default function ContactUsSection() {
             +00 1 212 555 1234   |    Sabrina’s Spanish Cuisine, 123 Calle del Sol, Worcester, MA
           </p>
         </div>
-      </div>
+  </div>
         
-      <div
+  <div
             ref={image2Ref}
-            className={`w-full h-auto
+    className={`w-full h-auto mt-8
               ${image2InView ? 'fade-in-up-visible' : 'fade-in-up-initial'}
             `}
           >

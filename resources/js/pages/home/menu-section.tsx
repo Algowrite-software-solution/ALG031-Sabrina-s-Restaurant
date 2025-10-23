@@ -51,7 +51,7 @@ export default function MenuSection() {
     const { ref: divRef, inView: divInView } = useInView({triggerOnce: true, threshold: 0.1, delay: 300,});
  
     return (
-        <section id='menu' className="bg-cream h-screen py-5">
+        <section id='menu' className="bg-cream min-h-screen py-5 flex flex-col justify-center">
             <div 
                 ref={divRef}
                 className={`

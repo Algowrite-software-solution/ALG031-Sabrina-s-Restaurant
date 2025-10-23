@@ -48,7 +48,7 @@ export default function ContactUsSection() {
 
   return (
     <section id='contact-us' className="bg-cream flex-row w-full items-center justify-center text-black">
-      <div className='container'>
+      <div className='container mx-auto'>
         <div className="w-full p-10">
           <div 
             ref={image1Ref}

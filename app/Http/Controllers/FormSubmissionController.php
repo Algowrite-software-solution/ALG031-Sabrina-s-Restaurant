@@ -27,7 +27,7 @@ class FormSubmissionController extends Controller
         ]);
         try {
             // Send an email to the restaurant admin
-            Mail::to('gayamina11122@gmail.com')->send(new ContactFormSubmitted($validatedData));
+            Mail::to('info.sabrinas@algowrite.com')->send(new ContactFormSubmitted($validatedData));
         } catch (Throwable $e) {
             return back()->with('error_message', 'Sorry, something went wrong. Please try again.');
         }
@@ -51,7 +51,7 @@ class FormSubmissionController extends Controller
         ]);
 
         // Email 1: Send a notification to the restaurant's reservation desk
-        Mail::to('gayamina11122@gmail.com')->send(new ReservationMade($validatedData));
+        Mail::to('info.sabrinas@algowrite.com')->send(new ReservationMade($validatedData));
 
         // Email 2: Send a confirmation email to the customer
         Mail::to($validatedData['email'])->send(new ReservationConfirmation($validatedData));

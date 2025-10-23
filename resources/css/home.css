@@ -86,6 +86,10 @@ html {
         color: #8b0000;
         font-weight: bold;
     }
+    .text-deep-red-hover:active {
+        color: #8b0000;
+        font-weight: bold;
+    }
 
     .bg-cream {
         background-color: #f5f5dc;

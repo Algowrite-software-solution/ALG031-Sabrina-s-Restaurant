@@ -106,7 +106,7 @@ export default function ReservationsSection() {
                   <input 
                     type="number" 
                     placeholder="Adults" 
-                    min="1"
+                    min="0"
                     className="font-outfit text-[14px] md:text-[18px] lg:text-[21px] font-light w-1/2 bg-transparent border-b-1 
                                border-black focus:outline-none focus:border-deep-red py-2 placeholder:text-gray-500"
                   />

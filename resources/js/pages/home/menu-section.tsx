@@ -51,11 +51,11 @@ export default function MenuSection() {
     const { ref: divRef, inView: divInView } = useInView({triggerOnce: true, threshold: 0.1, delay: 300,});
  
     return (
-        <section id='menu' className="bg-amber-200 h-screen py-5">
+        <section id='menu' className="bg-cream h-screen py-5">
             <div 
                 ref={divRef}
                 className={`
-                    flex flex-col container mx-auto items-center
+                    flex flex-col items-center
                     ${divInView ? 'fade-in-up-visible' : 'fade-in-up-initial'}
                 `}
             >
@@ -86,7 +86,7 @@ export default function MenuSection() {
                     className="w-full"
                 >
                     {menuItems.map((item, index) => (
-                        <SwiperSlide key={index} className="!w-[80%] md:!w-[50%] lg:!w-[35%] py-10">
+                        <SwiperSlide key={index} className="!w-[80%] md:!w-[50%] lg:!w-[30%] py-10">
                             <MenuCard imageUrl={item.imageUrl} title={item.title} description={item.description} isActive={index === activeIndex} />
                         </SwiperSlide>
                     ))}

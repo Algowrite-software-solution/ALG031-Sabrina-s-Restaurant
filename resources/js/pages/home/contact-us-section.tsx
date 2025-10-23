@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm, usePage } from '@inertiajs/react';
 import { FormField } from '../../components/custom/form-field';
 import { useInView } from 'react-intersection-observer';
@@ -20,11 +20,24 @@ export default function ContactUsSection() {
   });
 
   const { props } = usePage();
-  const successMessage = (props.flash as any)?.success_message;
+  const flash = (props.flash as { success_message?: string; error_message?: string }) || {};
+
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+      if (flash.success_message || flash.error_message) {
+          setVisible(true);
+          const timer = setTimeout(() => setVisible(false), 5000);
+          return () => clearTimeout(timer);
+      }
+  }, [flash]);
 
   function handleSubmit(e: React.FormEvent) {
       e.preventDefault();
-      post(route('contact.store'));
+      post(route('contact.store'), {
+        preserveScroll: true,
+        onSuccess: () => reset(),
+    });
   }
 
   useEffect(() => {
@@ -115,9 +128,22 @@ export default function ContactUsSection() {
             </form>
 
             
-            {successMessage && (
-                <div className="fixed bottom-10 right-10 bg-deep-red text-green-600 p-4 rounded-lg shadow-lg">
+            {/* {successMessage && (
+                <div className="fixed bottom-10 z-50 right-10 bg-deep-red text-white p-4 rounded-lg shadow-lg">
                     {successMessage}
+                </div>
+            )} */}
+
+            {visible && (
+                <div 
+                    className={`
+                        fixed bottom-10 z-50 right-10 p-4 rounded-lg shadow-lg text-white font-outfit
+                        transition-opacity duration-300
+                        ${flash.success_message ? 'bg-deep-red' : 'bg-gray-700'}
+                        ${visible ? 'opacity-100' : 'opacity-0'}
+                    `}
+                >
+                    {flash.success_message || flash.error_message}
                 </div>
             )}
 

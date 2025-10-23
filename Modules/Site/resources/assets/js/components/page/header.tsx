@@ -16,8 +16,8 @@ export default function Header({ logoUrl }: HeaderProps) {
       <div className="relative xl:container mx-auto z-10 flex justify-between items-center p-8 xl:py-6 2xl:py-8">
         
         <nav className="hidden md:flex items-center gap-8">
-          <a href="#about-us" className="font-outfit text-2xl font-light hover:opacity-80 transition-opacity">About</a>
-          <a href="#menu" className="font-outfit text-2xl font-light hover:opacity-80 transition-opacity">Menu</a>
+          <a href="#about-us" className="font-outfit text-deep-red-hover text-2xl font-light">About</a>
+          <a href="#menu" className="font-outfit text-2xl text-deep-red-hover font-light">Menu</a>
         </nav>
 
         <div className="md:hidden">
@@ -37,7 +37,7 @@ export default function Header({ logoUrl }: HeaderProps) {
         </div>
         
         <div className="hidden md:block">
-          <a href="#reservations" className="font-outfit text-2xl font-light border-s border-white/20 p-6 xl:p-4 2xl:p-6 hover:bg-pure-white hover:text-deep-red transition-colors">
+          <a href="#reservations" className="font-outfit text-deep-red-hover text-2xl font-light border-s border-white/20 p-6 xl:p-4 2xl:p-6 hover:bg-white transition-colors">
             Reserve a Table
           </a>
         </div>

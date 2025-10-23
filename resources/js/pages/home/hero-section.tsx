@@ -40,7 +40,7 @@ export default function HeroSection() {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/95 via-black/75 to-black/55"></div>
 
-      <div className="relative xl:container z-10 flex flex-col items-center gap-y-8 2xl:gap-y-14 px-6 pt-40 md:pt-20 text-pure-white">
+      <div className="relative container mx-auto z-10 flex flex-col items-center gap-y-8 2xl:gap-y-14 pt-40 md:pt-20 text-pure-white">
         
         <h1 
           ref={h1Ref}

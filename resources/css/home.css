@@ -65,6 +65,10 @@
     background: var(--destructive);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 @layer utilities {
     .bg-deep-red {
         background-color: #8b0000;
@@ -143,5 +147,5 @@
 }
 
 .soft-shadow {
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 50px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 30px;
 }

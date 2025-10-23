@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { FormField } from '../../components/custom/form-field';
 import { useForm, usePage } from '@inertiajs/react';
@@ -20,11 +20,25 @@ export default function ReservationsSection() {
   });
   
   const { props } = usePage();
-  const successMessage = (props.flash as any)?.success_message;
+    
+  const flash = (props.flash as { success_message?: string; error_message?: string }) || {};
+
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+      if (flash.success_message || flash.error_message) {
+          setVisible(true);
+          const timer = setTimeout(() => setVisible(false), 5000);
+          return () => clearTimeout(timer);
+      }
+  }, [flash]);
 
   function handleSubmit(e: React.FormEvent) {
       e.preventDefault();
-      post(route('reservation.store'));
+      post(route('reservation.store'), {
+        preserveScroll: true,
+        onSuccess: () => reset(),
+    });
   }
 
   useEffect(() => {
@@ -76,13 +90,13 @@ export default function ReservationsSection() {
             >
               
               <FormField label="Name" id="name" value={data.name} type="text" placeholder="enter your name" onChange={e => setData('name', e.target.value)} />
-              {errors.name && <div className="error">{errors.name}</div>}
+              {errors.name && <div className="error text-red-500">{errors.name}</div>}
               <FormField label="Email" id="email" value={data.email} type="email" placeholder="enter your email" onChange={e => setData('email', e.target.value)} />
-              {errors.email && <div className="error">{errors.email}</div>}
+              {errors.email && <div className="error text-red-500">{errors.email}</div>}
               <FormField label="Phone" id="phone" value={data.phone} type="tel" placeholder="enter your number" onChange={e => setData('phone', e.target.value)} />
-              {errors.phone && <div className="error">{errors.phone}</div>}
+              {errors.phone && <div className="error text-red-500">{errors.phone}</div>}
               <FormField label="Date"  id="date" value={data.date} type="date" placeholder="Select the date" onChange={e => setData('date', e.target.value)} />
-              {errors.date && <div className="error">{errors.date}</div>}
+              {errors.date && <div className="error text-red-500">{errors.date}</div>}
               
               <div className="flex w-full flex-col md:flex-row md:items-center">
                 <label className="font-outfit text-[14px] md:text-[18px] lg:text-[21px] font-normal text-left w-full md:w-1/4 mb-1 md:mb-0">
@@ -107,6 +121,18 @@ export default function ReservationsSection() {
               </div>
 
             </form>
+            {visible && (
+                <div 
+                    className={`
+                        fixed bottom-10 right-10 p-4 rounded-lg shadow-lg text-white font-outfit
+                        transition-opacity duration-300
+                        ${flash.success_message ? 'bg-deep-red' : 'bg-gray-700'}
+                        ${visible ? 'opacity-100' : 'opacity-0'}
+                    `}
+                >
+                    {flash.success_message || flash.error_message}
+                </div>
+            )}
           </div>
         </div>
 
@@ -118,8 +144,8 @@ export default function ReservationsSection() {
           ref={buttonRef}
           className={`
             font-milyuna bg-transparent border-1 border-deep-red text-deep-red
-                             font-normal uppercase leading-none tracking-[.05em] p-4 md:p-3
-                             text-[20px] md:text-[36px] transition-colors bg-deep-red-hover hover:text-white
+            font-normal leading-none tracking-[.05em] p-4 md:p-3
+            text-[20px] md:text-[36px] transition-colors bg-deep-red-hover hover:text-white
             ${buttonInView ? 'fade-in-up-visible' : 'fade-in-up-short-initial'}
           `}
         >

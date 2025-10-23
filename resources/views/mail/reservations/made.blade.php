@@ -46,10 +46,10 @@
                                     <td style="padding-top: 20px; padding-bottom: 10px; font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: bold;">Date:</td>
                                     <td style="padding-top: 20px; padding-bottom: 10px; font-family: 'Outfit', sans-serif; font-size: 16px;">{{ \Carbon\Carbon::parse($data['date'])->format('l, F j, Y') }}</td>
                                 </tr>
-                                <tr>
+                                {{-- <tr>
                                     <td style="padding-bottom: 10px; font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: bold;">Party Size:</td>
                                     <td style="padding-bottom: 10px; font-family: 'Outfit', sans-serif; font-size: 16px;">{{ $data['adults'] }} Adults, {{ $data['children'] ?? 0 }} Children</td>
-                                </tr>
+                                </tr> --}}
                             </table>
                         </td>
                     </tr>

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactFormSubmitted;
 use App\Mail\ReservationMade;
 use App\Mail\ReservationConfirmation;
+use Throwable;
 
 class FormSubmissionController extends Controller
 {
@@ -24,9 +25,13 @@ class FormSubmissionController extends Controller
             'email' => 'required|email|max:255',
             'message' => 'required|string|min:10',
         ]);
+        try {
+            // Send an email to the restaurant admin
+            Mail::to('gayamina11122@gmail.com')->send(new ContactFormSubmitted($validatedData));
+        } catch (Throwable $e) {
+            return back()->with('error_message', 'Sorry, something went wrong. Please try again.');
+        }
 
-        // Send an email to the restaurant admin
-        Mail::to('gayamina11122@gmail.com')->send(new ContactFormSubmitted($validatedData));
 
         return back()->with('success_message', 'Thank you! Your message has been sent.');
     }

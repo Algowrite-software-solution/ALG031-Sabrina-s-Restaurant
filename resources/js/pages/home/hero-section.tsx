@@ -24,8 +24,8 @@ export default function HeroSection() {
 
   return (
     <div id='home'
-      className="relative flex justify-center items-center h-screen w-full text-center bg-center bg-cover"
-      style={{ backgroundImage: `url("storage/images/home/hero-background.png")` }}
+      className="relative flex h-screen w-full items-center justify-center text-center bg-center bg-cover"
+      style={{ backgroundImage: `url("storage/images/home/hero-background.webp")` }}
     >
       <video
         key={currentVideo}

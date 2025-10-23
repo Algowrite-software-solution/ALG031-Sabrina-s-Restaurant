@@ -39,3 +39,11 @@ Route::get('/test-audit-middleware', function () {
 Route::get('test', function () {
     return Inertia::render('test');
 })->name('admin.test');
+
+Route::get('/terms', function () {
+    return Inertia::render('terms');
+})->name('terms');
+
+Route::get('/privacy', function () {
+    return Inertia::render('privacy');
+})->name('privacy');

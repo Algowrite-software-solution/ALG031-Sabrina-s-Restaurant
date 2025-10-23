@@ -47,7 +47,7 @@ export default function ContactUsSection() {
   }, [wasSuccessful]);
 
   return (
-    <section id='contact-us' className="bg-cream flex w-full items-center justify-center text-black">
+    <section id='contact-us' className="bg-cream flex-row w-full items-center justify-center text-black">
       <div className='container'>
         <div className="w-full p-10">
           <div 
@@ -188,23 +188,23 @@ export default function ContactUsSection() {
             +00 1 212 555 1234   |    Sabrina’s Spanish Cuisine, 123 Calle del Sol, Worcester, MA
           </p>
         </div>
+      </div>
         
-        <div
-              ref={image2Ref}
-              className={`
-                ${image2InView ? 'fade-in-up-visible' : 'fade-in-up-initial'}
-              `}
-            >
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2959.489112423588!2d-71.8043003239327!3d42.26834117120304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e4066c0d8b0e8b%3A0x296f30d0d866a237!2sWorcester%2C%20MA%2C%20USA!5e0!3m2!1sen!2sca!4v1678886400000" 
-            width="100%" 
-            height="450" 
-            style={{ border: 0 }}
-            allowFullScreen={false} 
-            loading="lazy" 
-            referrerPolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
+      <div
+            ref={image2Ref}
+            className={`w-full h-auto
+              ${image2InView ? 'fade-in-up-visible' : 'fade-in-up-initial'}
+            `}
+          >
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2959.489112423588!2d-71.8043003239327!3d42.26834117120304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e4066c0d8b0e8b%3A0x296f30d0d866a237!2sWorcester%2C%20MA%2C%20USA!5e0!3m2!1sen!2sca!4v1678886400000" 
+          width="100%" 
+          height="450" 
+          style={{ border: 0 }}
+          allowFullScreen={false} 
+          loading="lazy" 
+          referrerPolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
     </section>
   );

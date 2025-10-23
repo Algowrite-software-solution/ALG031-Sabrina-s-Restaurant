@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { FormField } from '../../components/custom/form-field';
+import { useForm, usePage } from '@inertiajs/react';
 
 export default function ReservationsSection() {
 
@@ -8,6 +9,29 @@ export default function ReservationsSection() {
   const { ref: paraRef, inView: paraInView } = useInView({triggerOnce: true, threshold: 0.1, delay: 300,});
   const { ref: divRef, inView: divInView } = useInView({triggerOnce: true, threshold: 0.1, delay: 600,});
   const { ref: buttonRef, inView: buttonInView } = useInView({triggerOnce: true, threshold: 0.1, delay: 700,});
+
+  const { data, setData, post, processing, errors, reset, wasSuccessful } = useForm({
+        name: '',
+        email: '',
+        phone: '',
+        date: '',
+        adults: 1,
+        children: 0,
+  });
+  
+  const { props } = usePage();
+  const successMessage = (props.flash as any)?.success_message;
+
+  function handleSubmit(e: React.FormEvent) {
+      e.preventDefault();
+      post(route('reservation.store'));
+  }
+
+  useEffect(() => {
+      if (wasSuccessful) {
+          reset();
+      }
+  }, [wasSuccessful]);
 
   return (
     <section id='reservations' className="bg-cream h-full md:h-screen text-black py-8 md:py-4 px-4 md:px-8">
@@ -17,7 +41,7 @@ export default function ReservationsSection() {
           ref={h2Ref}
           className={`
             font-milyuna font-normal leading-none tracking-normal 
-                       text-center md:text-left text-[64px] md:text-[112px] mb-8
+                       text-center md:text-left text-[48px] sm:text-[64px] md:text-[112px] mb-8
             ${h2InView ? 'fade-in-up-visible' : 'fade-in-up-initial'}
           `}
         >
@@ -42,18 +66,24 @@ export default function ReservationsSection() {
 
           <div className="w-full md:w-2/3 pl-0 md:pl-20 order-2">
             <form 
-          ref={divRef}
-          className={`
-            flex flex-col gap-2
-            ${divInView ? 'fade-in-up-visible' : 'fade-in-up-initial'}
-          `}
-        >
+              ref={divRef}
+              onSubmit={handleSubmit}
+              id="reservations-form"
+              className={`
+                flex flex-col gap-2
+                ${divInView ? 'fade-in-up-visible' : 'fade-in-up-initial'}
+              `}
+            >
               
-              <FormField label="Name" id="name" type="text" placeholder="enter your name" />
-              <FormField label="Email" id="email" type="email" placeholder="enter your email" />
-              <FormField label="Phone" id="phone" type="tel" placeholder="enter your number" />
-              <FormField label="Date" id="date" type="date" placeholder="Select the date" />
-
+              <FormField label="Name" id="name" value={data.name} type="text" placeholder="enter your name" onChange={e => setData('name', e.target.value)} />
+              {errors.name && <div className="error">{errors.name}</div>}
+              <FormField label="Email" id="email" value={data.email} type="email" placeholder="enter your email" onChange={e => setData('email', e.target.value)} />
+              {errors.email && <div className="error">{errors.email}</div>}
+              <FormField label="Phone" id="phone" value={data.phone} type="tel" placeholder="enter your number" onChange={e => setData('phone', e.target.value)} />
+              {errors.phone && <div className="error">{errors.phone}</div>}
+              <FormField label="Date"  id="date" value={data.date} type="date" placeholder="Select the date" onChange={e => setData('date', e.target.value)} />
+              {errors.date && <div className="error">{errors.date}</div>}
+              
               <div className="flex w-full flex-col md:flex-row md:items-center">
                 <label className="font-outfit text-[14px] md:text-[18px] lg:text-[21px] font-normal text-left w-full md:w-1/4 mb-1 md:mb-0">
                   Party Size
@@ -82,6 +112,9 @@ export default function ReservationsSection() {
 
         <div className="mt-12 md:mt-16 flex justify-center md:justify-end">
           <button 
+          type="submit" 
+          disabled={processing}
+          form="reservations-form"
           ref={buttonRef}
           className={`
             font-milyuna bg-transparent border-1 border-deep-red text-deep-red

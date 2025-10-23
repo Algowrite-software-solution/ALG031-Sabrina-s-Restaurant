@@ -55,7 +55,7 @@ export default function MenuSection() {
             <div 
                 ref={divRef}
                 className={`
-                    flex flex-col items-center
+                    flex flex-col container mx-auto items-center
                     ${divInView ? 'fade-in-up-visible' : 'fade-in-up-initial'}
                 `}
             >

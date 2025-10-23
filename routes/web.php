@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\FormSubmissionController;
 
 // ==========================================
 // Core Routes
@@ -19,6 +20,9 @@ require __DIR__ . '/core.php';
 Route::get('/', function () {
     return Inertia::render('welcome');
 })->name('welcome');
+
+Route::post('/contact-submission', [FormSubmissionController::class, 'storeContact'])->name('contact.store');
+Route::post('/reservation-submission', [FormSubmissionController::class, 'storeReservation'])->name('reservation.store');
 
 
 //test route

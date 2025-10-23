@@ -9,15 +9,25 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class ReservationConfirmation extends Mailable
+class ContactFormConfirmation extends Mailable
 {
     use Queueable, SerializesModels;
+
     public $data;
-    public function __construct(array $data) { $this->data = $data; }
-    public function envelope(): Envelope {
-        return new Envelope(subject: 'Your Reservation Request Received at Sabrina\'s Restaurant');
+
+    public function __construct(array $data) 
+    { 
+        $this->data = $data; 
     }
+
+    public function envelope(): Envelope {
+        return new Envelope(subject: 'Your Contact Form Submission Received at Sabrina\'s Restaurant');
+    }
+
     public function content(): Content {
-        return new Content(view: 'mail.reservations.confirmation');
+        return new Content(
+            view: 'mail.contact.submittedconfirmation',
+            with: ['data' => $this->data],
+        );
     }
 }

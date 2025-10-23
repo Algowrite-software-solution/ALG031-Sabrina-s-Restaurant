@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactFormSubmitted;
+use App\Mail\ContactFormConfirmation;
 use App\Mail\ReservationMade;
 use App\Mail\ReservationConfirmation;
 use Throwable;
@@ -28,6 +29,8 @@ class FormSubmissionController extends Controller
         try {
             // Send an email to the restaurant admin
             Mail::to('info.sabrinas@algowrite.com')->send(new ContactFormSubmitted($validatedData));
+
+            Mail::to($validatedData['email'])->send(new ContactFormConfirmation($validatedData));
         } catch (Throwable $e) {
             return back()->with('error_message', 'Sorry, something went wrong. Please try again.');
         }

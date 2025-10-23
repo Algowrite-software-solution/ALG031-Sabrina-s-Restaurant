@@ -22,21 +22,19 @@ export default function ContactUsSection() {
   const { props } = usePage();
   const flash = (props.flash as { success_message?: string; error_message?: string }) || {};
 
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-      if (flash.success_message || flash.error_message) {
-          setVisible(true);
-          const timer = setTimeout(() => setVisible(false), 5000);
-          return () => clearTimeout(timer);
-      }
-  }, [flash]);
+  const [localSuccessMessage, setLocalSuccessMessage] = useState<string | null>(null);
 
   function handleSubmit(e: React.FormEvent) {
       e.preventDefault();
       post(route('contact.store'), {
         preserveScroll: true,
-        onSuccess: () => reset(),
+        onSuccess: () => {
+          reset();         
+          if (!flash.success_message) {
+            setLocalSuccessMessage('Message sent successfully.');
+            setTimeout(() => setLocalSuccessMessage(null), 5000);
+          }
+        },
     });
   }
 
@@ -45,6 +43,10 @@ export default function ContactUsSection() {
           reset();
       }
   }, [wasSuccessful]);
+
+  const successText = (flash.success_message as string) || localSuccessMessage || '';
+  const showInlineError = Object.keys(errors).length > 0 && !successText;
+  const errorText = (flash.error_message as string) || (showInlineError ? 'Please correct the highlighted fields.' : '');
 
   return (
     <section id='contact-us' className="bg-cream w-full text-black">
@@ -127,26 +129,6 @@ export default function ContactUsSection() {
               {errors.message && <div className="text-red-500">{errors.message}</div>}
             </form>
 
-            
-            {/* {successMessage && (
-                <div className="fixed bottom-10 z-50 right-10 bg-deep-red text-white p-4 rounded-lg shadow-lg">
-                    {successMessage}
-                </div>
-            )} */}
-
-            {visible && (
-                <div 
-                    className={`
-                        fixed bottom-10 z-50 right-10 p-4 rounded-lg shadow-lg text-white font-outfit
-                        transition-opacity duration-300
-                        ${flash.success_message ? 'bg-deep-red' : 'bg-gray-700'}
-                        ${visible ? 'opacity-100' : 'opacity-0'}
-                    `}
-                >
-                    {flash.success_message || flash.error_message}
-                </div>
-            )}
-
             <div className="w-full max-h-full md:w-1/3 flex justify-center items-end md:justify-start pt-0 md:pt-8">
               <button
               type="submit"  
@@ -175,6 +157,28 @@ export default function ContactUsSection() {
               </button>
             </div>
           </div>
+
+          {(successText || errorText) && (
+            <div className="w-full md:w-2/3 mt-4" role="status" aria-live="polite">
+              <div className={`inline-flex items-center gap-3 px-4 py-2 border-1 bg-transparent ${successText ? 'border-deep-red text-deep-red' : 'border-black text-black'}`}>
+                {successText ? (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                ) : (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="8" x2="12" y2="12" />
+                    <line x1="12" y1="16" x2="12" y2="16" />
+                  </svg>
+                )}
+                <span className="font-outfit text-xs md:text-sm tracking-wide">
+                  {successText || errorText}
+                </span>
+              </div>
+            </div>
+          )}
+
         </div>
 
         <div className="text-center mb-4">

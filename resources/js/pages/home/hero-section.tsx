@@ -40,7 +40,7 @@ export default function HeroSection() {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/95 via-black/75 to-black/55"></div>
 
-      <div className="relative z-10 flex flex-col items-center gap-y-14 xl:gap-y-8 2xl:gap-y-14 px-6 pt-40 md:pt-20 text-pure-white">
+      <div className="relative container mx-auto z-10 flex flex-col items-center gap-y-8 2xl:gap-y-14 pt-40 md:pt-20 text-pure-white">
         
         <h1 
           ref={h1Ref}
@@ -66,7 +66,7 @@ export default function HeroSection() {
         <a href='#reservations' 
           ref={button1Ref}
           className={`
-            font-milyuna md:hidden block border-1 border-deep-red bg-transparent px-2 py-3 text-[24px]
+            font-milyuna md:hidden block border-2 border-deep-red bg-transparent px-2 py-3 text-[24px]
                      font-light leading-none tracking-[.05em] transition-colors 
                      bg-deep-red-hover hover:bg-opacity-75 md:text-[40px]
             ${button1InView ? 'fade-in-up-visible' : 'fade-in-up-initial'}
@@ -78,7 +78,7 @@ export default function HeroSection() {
         <a href='#menu'
           ref={button2Ref}
           className={`
-            font-milyuna border-1 border-deep-red bg-transparent px-2 py-3 text-[24px]
+            font-milyuna border-2 border-deep-red bg-transparent px-2 py-3 text-[24px]
                      font-light leading-none tracking-[.05em] transition-colors 
                      bg-deep-red-hover hover:bg-opacity-75 md:text-[40px]
             ${button2InView ? 'fade-in-up-visible' : 'fade-in-up-initial'}

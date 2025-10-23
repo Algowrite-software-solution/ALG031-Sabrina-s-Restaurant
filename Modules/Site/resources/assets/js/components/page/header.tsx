@@ -13,11 +13,11 @@ export default function Header({ logoUrl }: HeaderProps) {
     <header className="absolute top-0 left-0 w-full z-30 border-b border-white/20 text-pure-white">
       <div className="absolute inset-0 bg-gradient-to-b from-black/95 via-black/55 to-black/20"></div>
 
-      <div className="relative z-10 flex justify-between items-center p-8 xl:py-6 2xl:py-8">
+      <div className="relative xl:container mx-auto z-10 flex justify-between items-center p-8 xl:py-6 2xl:py-8">
         
         <nav className="hidden md:flex items-center gap-8">
-          <a href="#about-us" className="font-outfit text-2xl font-light hover:opacity-80 transition-opacity">About</a>
-          <a href="#menu" className="font-outfit text-2xl font-light hover:opacity-80 transition-opacity">Menu</a>
+          <a href="#about-us" className="font-outfit text-deep-red-hover text-2xl font-light">About</a>
+          <a href="#menu" className="font-outfit text-2xl text-deep-red-hover font-light">Menu</a>
         </nav>
 
         <div className="md:hidden">
@@ -31,13 +31,13 @@ export default function Header({ logoUrl }: HeaderProps) {
         </div>
 
         <div className="md:absolute md:left-1/2 md:-translate-x-1/2">
-          <a href="#home">
+          <a href="/">
             <img src={'storage/images/brand/logo-deep-red.png'} alt="Sabrina's Logo" className="h-18 md:h-10 lg:h-18 xl:h-12 2xl:h-18 w-auto" />
           </a>
         </div>
         
         <div className="hidden md:block">
-          <a href="#reservations" className="font-outfit text-2xl font-light border-s border-white/20 p-6 xl:p-4 2xl:p-6 hover:bg-pure-white hover:text-deep-red transition-colors">
+          <a href="#reservations" className="font-outfit text-deep-red-hover text-2xl font-light border-s border-white/20 p-6 xl:p-4 2xl:p-6 hover:bg-white transition-colors">
             Reserve a Table
           </a>
         </div>

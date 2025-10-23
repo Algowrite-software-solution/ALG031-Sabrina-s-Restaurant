@@ -65,6 +65,10 @@
     background: var(--destructive);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 @layer utilities {
     .bg-deep-red {
         background-color: #8b0000;
@@ -79,6 +83,10 @@
         background-color: #8b0000;
     }
     .text-deep-red-hover:hover {
+        color: #8b0000;
+        font-weight: bold;
+    }
+    .text-deep-red-hover:active {
         color: #8b0000;
         font-weight: bold;
     }
@@ -143,5 +151,5 @@
 }
 
 .soft-shadow {
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 50px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 30px;
 }

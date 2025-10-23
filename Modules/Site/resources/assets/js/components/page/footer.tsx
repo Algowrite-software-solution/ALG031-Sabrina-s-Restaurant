@@ -20,7 +20,8 @@ const FacebookIcon = () => (
 export default function Footer() {
 
   return (
-    <footer className="bg-cream text-black overflow-hidden relative">
+    <footer className="bg-cream flex justify-center items-center text-black overflow-hidden relative">
+      <div className='container text-black overflow-hidden relative'>
       <div className="py-16 md:py-24 pb-10 md:pb-0 px-4 md:px-16 2xl:pb-30">
         <div className="flex flex-col md:flex-row text-center md:text-left items-center md:items-start justify-between gap-12">
           
@@ -45,7 +46,7 @@ export default function Footer() {
             <nav className="flex flex-col gap-2 items-center md:items-start">
               <a href="#reservations" className="font-outfit font-light text-xl leading-none text-deep-red-hover hover:underline">Reservations</a>
               <a href="#contact-us" className="font-outfit font-light text-xl leading-none text-deep-red-hover hover:underline">Contact Us</a>
-              <a href="#home" className="font-outfit font-light text-xl leading-none text-deep-red-hover hover:underline">Home</a>
+              <a href="/" className="font-outfit font-light text-xl leading-none text-deep-red-hover hover:underline">Home</a>
             </nav>
           </div>
 
@@ -54,10 +55,10 @@ export default function Footer() {
               Follow Us
             </h3>
             <div className="flex gap-4">
-              <a href="#" aria-label="Instagram" className="text-deep-red-hover">
+              <a href="https://www.instagram.com/" target='_blank' aria-label="Instagram" className="text-deep-red-hover">
                 <InstagramIcon />
               </a>
-              <a href="#" aria-label="Facebook" className="text-deep-red-hover">
+              <a href="https://www.facebook.com/" target='_blank' aria-label="Facebook" className="text-deep-red-hover">
                 <FacebookIcon />
               </a>
             </div>
@@ -73,6 +74,7 @@ export default function Footer() {
           className="md:absolute bottom-0 md:translate-y-1/2 translate-y-0
             w-full h-auto" 
         />
+      </div>
       </div>
     </footer>
   );

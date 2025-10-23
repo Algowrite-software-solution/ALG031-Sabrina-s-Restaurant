@@ -31,7 +31,7 @@ export default function OurStory() {
 
   return (
     <section id='about-us' className="bg-deep-red h-full md:h-screen flex justify-center items-center">
-      <div className="flex flex-col md:flex-row py-20 md:py-0 px-2 lg:px-10 xl:px-20 2xl:px-40">
+      <div className="flex flex-col container mx-auto md:flex-row py-20 md:py-0">
 
         <div className="relative w-full md:w-1/2 pr-4 md:pr-10 lg:pr-15 p-4 py-0">
             <div 
@@ -59,7 +59,7 @@ export default function OurStory() {
                 ref={leftTextRef}
                 className={`
                   font-milyuna absolute top-10 right-15 translate-x-1/2
-                                text-[128px] md:text-[112px] lg:text-[128px] font-normal leading-none tracking-[.05em] hidden md:block
+                                text-[128px] md:text-[100px] lg:text-[128px] font-normal leading-none tracking-[.05em] hidden md:block
                   ${leftTextInView ? 'fade-in-left-visible' : 'fade-in-left-initial'}
                 `}
               >
@@ -133,7 +133,8 @@ export default function OurStory() {
             </div>
             
             <div className="w-full md:w-1/2 flex justify-center md:justify-start mt-8 md:mt-0">
-              <button 
+              <a 
+                href='#contact-us'
                 ref={rightButtonRef}
                 className={`
                   font-outfit text-pure-white border-1 border-pure-white bg-transparent
@@ -143,7 +144,7 @@ export default function OurStory() {
                 `}
               >
                 Contact Us
-              </button>
+              </a>
             </div>
         </div>
       </div>

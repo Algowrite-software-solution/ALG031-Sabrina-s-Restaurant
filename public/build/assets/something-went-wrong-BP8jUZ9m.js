@@ -1,0 +1,1 @@
+import r from"./something-went-wrong-F2UtueNw.js";import"./app-7RRo-yyq.js";import"./button-CY0HcxOa.js";import"./index-C_0sg0lE.js";import"./utils-D-KgF5mV.js";class d extends r{}export{d as default};

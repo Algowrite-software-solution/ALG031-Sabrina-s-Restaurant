@@ -47,8 +47,8 @@ export default function Footer() {
               <a href="#reservations" className="font-outfit font-light text-xl leading-none text-deep-red-hover hover:underline">Reservations</a>
               <a href="#contact-us" className="font-outfit font-light text-xl leading-none text-deep-red-hover hover:underline">Contact Us</a>
               <a href="/" className="font-outfit font-light text-xl leading-none text-deep-red-hover hover:underline">Home</a>
-              <a href="/terms" className="font-outfit font-light text-xl leading-none text-deep-red-hover hover:underline">Terms & Conditions</a>
-              <a href="/privacy" className="font-outfit font-light text-xl leading-none text-deep-red-hover hover:underline">Privacy Policy</a>
+              <a href="/terms-and-conditions" className="font-outfit font-light text-xl leading-none text-deep-red-hover hover:underline">Terms & Conditions</a>
+              <a href="/privacy-policy" className="font-outfit font-light text-xl leading-none text-deep-red-hover hover:underline">Privacy Policy</a>
             </nav>
           </div>
 

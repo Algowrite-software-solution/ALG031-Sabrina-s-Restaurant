@@ -35,17 +35,17 @@ Route::get("/contact", function () {
 
 
 // Policies
-Route::get('/privacy-policy', function () {
-    return Inertia::render('Site::policies/privacy-policy');
-})->name('privacy-policy');
+// Route::get('/privacy-policy', function () {
+//     return Inertia::render('Site::policies/privacy-policy');
+// })->name('privacy-policy');
 
 Route::get('/return-policy', function () {
     return Inertia::render('Site::policies/return-policy');
 })->name('return-policy');
 
-Route::get('/terms-and-conditions', function () {
-    return Inertia::render('Site::policies/terms-and-conditions');
-})->name('terms-and-conditions');
+// Route::get('/terms-and-conditions', function () {
+//     return Inertia::render('Site::policies/terms-and-conditions');
+// })->name('terms-and-conditions');
 
 
 // utility

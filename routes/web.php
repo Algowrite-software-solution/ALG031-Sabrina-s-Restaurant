@@ -40,10 +40,10 @@ Route::get('test', function () {
     return Inertia::render('test');
 })->name('admin.test');
 
-Route::get('/terms', function () {
+Route::get('/terms-and-conditions', function () {
     return Inertia::render('terms');
 })->name('terms');
 
-Route::get('/privacy', function () {
+Route::get('/privacy-policy', function () {
     return Inertia::render('privacy');
 })->name('privacy');

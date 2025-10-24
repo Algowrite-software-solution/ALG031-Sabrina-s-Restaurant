@@ -3,7 +3,7 @@ import PageLayout from '@site/layouts/page-layout';
 
 export default function Terms() {
     return (
-        <PageLayout>
+        <PageLayout headerTransparent headerNavTextClass="text-deep-red" headerNavHoverClass="hover:text-white" headerCtaTextClass="text-deep-red" headerCtaHoverClass="hover:text-deep-red hover:bg-white">
             <Head title="Terms & Conditions" />
             <section id="terms" className="bg-cream text-black">
                 <div className="container mx-auto px-4 pt-28 pb-12 md:px-8 md:pt-32 md:pb-16">
@@ -137,7 +137,7 @@ export default function Terms() {
                         <section>
                             <h2 className="font-milyuna mb-3 text-2xl leading-none md:text-3xl">Contact Us</h2>
                             <p className="font-outfit text-base leading-relaxed">
-                                Questions about these Terms? Contact us at +00 1 212 555 1234 or visit us at Sabrina’s Spanish Cuisine, 123 Calle del
+                                Questions about these Terms? Contact us at <a href="tel:+0012125551234" className="underline">+00 1 212 555 1234</a> or visit us at Sabrina’s Spanish Cuisine, 123 Calle del
                                 Sol, Worcester, MA.
                             </p>
                         </section>

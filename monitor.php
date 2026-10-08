@@ -18,7 +18,7 @@ declare(strict_types=1);
 // ==========================================
 
 // Your Discord Webhook URL (or set environment variable DISCORD_WEBHOOK_URL)
-$discordWebhookUrl = getenv('DISCORD_WEBHOOK_URL') ?: 'https://discord.com/api/webhooks/1557657424154984520/Q_GOyjv6W7D_LdiDd-TBfLCC-JOYDq-g1C5viObjY2XcoTAU-CHfYO3i6iuOOTrJAuV2';
+$discordWebhookUrl = getenv('DISCORD_WEBHOOK_URL') ?: 'https://discord.com/api/webhooks/1557672530431705198/8XvwErqWGqPlhRnrRS34HnByxUR-ftUug-9KX-4tIDMVlLZ6IKqpc9R4U8ciiEnecZ2f';
 
 // List of websites to monitor
 $websites = [
@@ -174,7 +174,7 @@ function checkWebsite(string $url, int $timeout): array
 
 function sendDiscordAlert(string $webhookUrl, array $data): void
 {
-    if (empty($webhookUrl) || $webhookUrl === 'https://discord.com/api/webhooks/1557657424154984520/Q_GOyjv6W7D_LdiDd-TBfLCC-JOYDq-g1C5viObjY2XcoTAU-CHfYO3i6iuOOTrJAuV2') {
+    if (empty($webhookUrl) || $webhookUrl === 'https://discord.com/api/webhooks/1557672530431705198/8XvwErqWGqPlhRnrRS34HnByxUR-ftUug-9KX-4tIDMVlLZ6IKqpc9R4U8ciiEnecZ2f') {
         echo " [WARNING] Discord webhook URL is not configured.\n";
         return;
     }

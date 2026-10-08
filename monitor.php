@@ -19,13 +19,28 @@ $discordWebhookUrl = getenv('DISCORD_WEBHOOK_URL') ?: 'https://discord.com/api/w
 
 $websites = [
     [
-        'name'    => "Sabrina's Restaurant",
+        'name'    => "ALG031-Sabrina's Restaurant",
         'url'     => 'https://sabrinas.algowrite.com/',
         'timeout' => 10,
     ],
     [
-        'name'    => "South Coast Maritime Group",
+        'name'    => "ALG034-South Coast Maritime Group",
         'url'     => 'https://southcoastmaritimegroup.com/',
+        'timeout' => 10,
+    ],
+    [
+        'name'    => "ALG037-KWB Marine",
+        'url'     => 'https://kwbmarine.com/',
+        'timeout' => 10,
+    ],
+    [
+        'name'    => "ALG038-Serentti Enterprise",
+        'url'     => 'https://serenttienterprises.com/',
+        'timeout' => 10,
+    ],
+    [
+        'name'    => "ALG040-Acushnet Offshore System",
+        'url'     => 'https://acushnetoffshore.com/',
         'timeout' => 10,
     ],
 ];

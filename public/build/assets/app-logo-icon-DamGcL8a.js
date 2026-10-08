@@ -1,1 +1,0 @@
-import{j as n}from"./app-7RRo-yyq.js";import{c as s}from"./utils-D-KgF5mV.js";function o({className:r}){return n.jsx(n.Fragment,{children:n.jsx("span",{className:s("animate-pulse text-7xl",r),children:"💎"})})}export{o as A};

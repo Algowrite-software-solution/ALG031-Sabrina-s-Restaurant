@@ -2,9 +2,15 @@ name: Website Uptime Monitor
 
 on:
   schedule:
-    # Runs every 5 minutes (standard cron expression)
+    # Runs every 5 minutes in background
     - cron: '*/5 * * * *'
-  workflow_dispatch: # Allows manual trigger from GitHub UI anytime
+  workflow_dispatch:
+    inputs:
+      send_report:
+        description: 'Send live status report to Discord right now?'
+        required: true
+        type: boolean
+        default: true
 
 permissions:
   contents: write # Needed to persist uptime_state.json across runs
@@ -26,7 +32,13 @@ jobs:
       - name: Run Uptime Monitor
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        run: php monitor.php
+          FORCE_REPORT: ${{ github.event.inputs.send_report == 'true' && 'true' || 'false' }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.send_report }}" = "true" ]; then
+            php monitor.php --report
+          else
+            php monitor.php
+          fi
 
       - name: Commit & Push Updated Uptime State
         run: |

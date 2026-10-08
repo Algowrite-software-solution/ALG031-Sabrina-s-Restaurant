@@ -12,10 +12,8 @@
 declare(strict_types=1);
 
 // ==========================================
-// CONFIGURATION
-// ==========================================
-
-$discordWebhookUrl = getenv('DISCORD_WEBHOOK_URL') ?: 'https://discord.com/api/webhooks/1557672530431705198/8XvwErqWGqPlhRnrRS34HnByxUR-ftUug-9KX-4tIDMVlLZ6IKqpc9R4U8ciiEnecZ2f';
+// Your Discord Webhook URL (reads from GitHub Secrets or environment variable)
+$discordWebhookUrl = getenv('DISCORD_WEBHOOK_URL') ?: 'YOUR_DISCORD_WEBHOOK_URL_HERE';
 
 $websites = [
     [

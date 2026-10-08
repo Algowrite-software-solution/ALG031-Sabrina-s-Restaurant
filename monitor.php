@@ -72,6 +72,9 @@ foreach ($websites as $site) {
     // Alert logic:
     // 1. Site went DOWN
     // 2. Site was DOWN and has RECOVERED (UP)
+    // 3. Always send notification if ALWAYS_NOTIFY / TEST mode is enabled
+    $alwaysNotify = true; // Set to true for testing so you receive a message on every run!
+
     if ($currentStatus === 'down' && $previousStatus !== 'down') {
         echo " -> Sending DOWN alert to Discord...\n";
         sendDiscordAlert($discordWebhookUrl, [
@@ -91,6 +94,15 @@ foreach ($websites as $site) {
             'http_code'   => $result['http_code'],
             'total_time'  => $result['total_time'],
             'downtime_since' => $state[$key]['last_down_at'] ?? null,
+        ]);
+    } elseif ($alwaysNotify && $currentStatus === 'up') {
+        echo " -> Sending UP test notification to Discord...\n";
+        sendDiscordAlert($discordWebhookUrl, [
+            'type'        => 'up',
+            'name'        => $name,
+            'url'         => $url,
+            'http_code'   => $result['http_code'],
+            'total_time'  => $result['total_time'],
         ]);
     }
 
@@ -174,14 +186,23 @@ function checkWebsite(string $url, int $timeout): array
 
 function sendDiscordAlert(string $webhookUrl, array $data): void
 {
-    if (empty($webhookUrl) || $webhookUrl === 'https://discord.com/api/webhooks/1557672530431705198/8XvwErqWGqPlhRnrRS34HnByxUR-ftUug-9KX-4tIDMVlLZ6IKqpc9R4U8ciiEnecZ2f') {
+    if (empty($webhookUrl) || $webhookUrl === 'YOUR_DISCORD_WEBHOOK_URL_HERE') {
         echo " [WARNING] Discord webhook URL is not configured.\n";
         return;
     }
 
-    $isDown = ($data['type'] === 'down');
-    $color = $isDown ? 0xE74C3C : 0x2ECC71; // Red : Green
-    $title = $isDown ? "🚨 WEBSITE DOWN: {$data['name']}" : "✅ RECOVERED: {$data['name']}";
+    $type = $data['type'];
+    $isDown = ($type === 'down');
+    if ($type === 'down') {
+        $color = 0xE74C3C; // Red
+        $title = "🚨 WEBSITE DOWN: {$data['name']}";
+    } elseif ($type === 'recovered') {
+        $color = 0x2ECC71; // Green
+        $title = "✅ RECOVERED: {$data['name']}";
+    } else {
+        $color = 0x3498DB; // Blue
+        $title = "🟢 LIVE STATUS: {$data['name']}";
+    }
     $responseTimeMs = round($data['total_time'] * 1000);
 
     $fields = [

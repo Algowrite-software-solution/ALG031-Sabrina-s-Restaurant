@@ -23,6 +23,16 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Restore Uptime State from uptime-state Branch
+        run: |
+          git fetch origin uptime-state:refs/remotes/origin/uptime-state || true
+          if git show origin/uptime-state:uptime_state.json > uptime_state.json 2>/dev/null; then
+            echo "Successfully loaded previous uptime_state.json from uptime-state branch."
+          else
+            echo "No existing uptime_state.json found on uptime-state branch, initializing empty state."
+            echo "{}" > uptime_state.json
+          fi
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -40,9 +50,23 @@ jobs:
             php monitor.php
           fi
 
-      - name: Commit & Push Updated Uptime State
+      - name: Persist State to uptime-state Branch (Zero Commits on Main)
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add uptime_state.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update uptime state [skip ci]" && git push)
+          if [ -f uptime_state.json ]; then
+            git config --global user.name "github-actions[bot]"
+            git config --global user.email "github-actions[bot]@users.noreply.github.com"
+            
+            # Fetch remote uptime-state branch if it exists, or create orphan branch in temporary worktree
+            git worktree add ../uptime-state-branch uptime-state 2>/dev/null || \
+              (git checkout --orphan uptime-state && git rm -rf . && git commit --allow-empty -m "init uptime-state" && git checkout main && git worktree add ../uptime-state-branch uptime-state)
+
+            cp uptime_state.json ../uptime-state-branch/uptime_state.json
+            cd ../uptime-state-branch
+            git add uptime_state.json
+            if ! git diff --quiet --cached; then
+              git commit -m "chore: update uptime state [skip ci]"
+              git push origin uptime-state
+            else
+              echo "No changes in uptime state, skipping push."
+            fi
+          fi

@@ -10,38 +10,38 @@
         "name": "ALG031-Sabrina's Restaurant",
         "url": "https:\/\/sabrinas.algowrite.com\/",
         "status": "up",
-        "last_checked": 1792972600,
+        "last_checked": 1792987667,
         "last_down_at": null
     },
     "cb9f6943227757e1acb2ca1917db3c84": {
         "name": "ALG034-South Coast Maritime Group",
         "url": "https:\/\/southcoastmaritimegroup.com\/",
         "status": "up",
-        "last_checked": 1792972601,
+        "last_checked": 1792987668,
         "last_down_at": null
     },
     "9880b3e03a872841ed332b8e70da17aa": {
         "name": "ALG037-KWB Marine",
         "url": "https:\/\/kwbmarine.com\/",
         "status": "up",
-        "last_checked": 1792972601,
+        "last_checked": 1792987668,
         "last_down_at": null
     },
     "cba2e897002f9135f085557aee6a6f41": {
         "name": "ALG038-Serentti Enterprise",
         "url": "https:\/\/serenttienterprises.com\/",
         "status": "up",
-        "last_checked": 1792972602,
+        "last_checked": 1792987669,
         "last_down_at": null
     },
     "cfabe670d4019abca4110f9baf27295d": {
         "name": "ALG040-Acushnet Offshore System",
         "url": "https:\/\/acushnetoffshore.com\/",
         "status": "up",
-        "last_checked": 1792972603,
+        "last_checked": 1792987670,
         "last_down_at": null
     },
     "__meta": {
-        "last_daily_report": "2026-10-25"
+        "last_daily_report": "2026-10-26"
     }
 }

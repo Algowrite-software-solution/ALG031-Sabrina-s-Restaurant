@@ -17,11 +17,6 @@ $discordWebhookUrl = getenv('DISCORD_WEBHOOK_URL') ?: 'YOUR_DISCORD_WEBHOOK_URL_
 
 $websites = [
     [
-        'name'    => "ALG031-Sabrina's Restaurant",
-        'url'     => 'https://sabrinas.algowrite.com/',
-        'timeout' => 10,
-    ],
-    [
         'name'    => "ALG034-South Coast Maritime Group",
         'url'     => 'https://southcoastmaritimegroup.com/',
         'timeout' => 10,
@@ -39,6 +34,11 @@ $websites = [
     [
         'name'    => "ALG040-Acushnet Offshore System",
         'url'     => 'https://acushnetoffshore.com/',
+        'timeout' => 10,
+    ],
+    [
+        'name'    => "ALG041-All Stars Barbershop",
+        'url'     => 'https://allstarsbarber.shop/',
         'timeout' => 10,
     ],
 ];

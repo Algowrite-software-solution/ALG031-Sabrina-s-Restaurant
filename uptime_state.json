@@ -17,28 +17,28 @@
         "name": "ALG034-South Coast Maritime Group",
         "url": "https:\/\/southcoastmaritimegroup.com\/",
         "status": "up",
-        "last_checked": 1795777312,
+        "last_checked": 1795809157,
         "last_down_at": null
     },
     "9880b3e03a872841ed332b8e70da17aa": {
         "name": "ALG037-KWB Marine",
         "url": "https:\/\/kwbmarine.com\/",
         "status": "up",
-        "last_checked": 1795777312,
+        "last_checked": 1795809157,
         "last_down_at": null
     },
     "cba2e897002f9135f085557aee6a6f41": {
         "name": "ALG038-Serentti Enterprise",
         "url": "https:\/\/serenttienterprises.com\/",
         "status": "up",
-        "last_checked": 1795777313,
+        "last_checked": 1795809158,
         "last_down_at": null
     },
     "cfabe670d4019abca4110f9baf27295d": {
         "name": "ALG040-Acushnet Offshore System",
         "url": "https:\/\/acushnetoffshore.com\/",
         "status": "up",
-        "last_checked": 1795777314,
+        "last_checked": 1795809159,
         "last_down_at": null
     },
     "__meta": {
@@ -48,7 +48,7 @@
         "name": "ALG041-All Stars Barbershop",
         "url": "https:\/\/allstarsbarber.shop\/",
         "status": "up",
-        "last_checked": 1795777316,
+        "last_checked": 1795809160,
         "last_down_at": null
     }
 }
